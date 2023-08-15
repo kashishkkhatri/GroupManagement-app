@@ -1,0 +1,28 @@
+<div mat-dialog-title><h2>{{title}} Group</h2></div>
+<form [formGroup]="groupForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content class="content">
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Name</mat-label>
+                <input matInput type="text" placeholder="Name" maxlength="100" formControlName="name" required>
+                <mat-error *ngIf="groupForm.controls['name'].invalid">Please enter a group name</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Code</mat-label>
+                <input matInput type="text" placeholder="Code" maxlength="50" formControlName="group_code" required>
+                <mat-error *ngIf="groupForm.controls['group_code'].invalid">Please enter a group code</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea matInput type="textarea" placeholder="Description" formControlName="description" required></textarea>
+                <mat-error *ngIf="groupForm.controls['description'].invalid">Please enter a group description</mat-error>
+            </mat-form-field>
+        </div>
+    </div>
+    <div mat-dialog-actions class="action">
+        <button mat-raised-button [mat-dialog-close]="false">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">Save</button>
+    </div>
+</form>

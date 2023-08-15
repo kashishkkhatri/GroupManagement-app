@@ -1,0 +1,63 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "groups": [
+    {
+      "name": "Backup Operator",
+      "code": "BO0053",
+      "description": "Back up Operator ",
+      "id": 2
+    },
+    {
+      "name": "Device Owner",
+      "code": "DO001",
+      "description": "Member of this group change device",
+      "id": 3
+    },
+    {
+      "name": "Power Users",
+      "code": "PU89",
+      "description": "Power Users are included for backup",
+      "id": 4
+    },
+    {
+      "name": "Replicator",
+      "code": "R999",
+      "description": "Support file replicator in the domain",
+      "id": 5
+    },
+    {
+      "name": "Event Log Readers",
+      "code": "ELR7878",
+      "description": "Member of this group read event from the log",
+      "id": 6
+    },
+    {
+      "name": "Administrator",
+      "code": "Ad899",
+      "description": "Admin who has all the writes in the system",
+      "id": 7
+    },
+    {
+      "name": "Marketing",
+      "code": "MK838",
+      "description": "Marketing department ",
+      "id": 8
+    }
+  ]
+}

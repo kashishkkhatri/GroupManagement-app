@@ -1,0 +1,63 @@
+<p>
+    <mat-toolbar>
+      <span>Group: {{group}}</span>
+    </mat-toolbar>
+</p>
+<div>
+<h3>&nbsp;&nbsp;Users</h3>
+&nbsp;&nbsp;<select  name="selectedProp" [(ngModel)]="selectedUser" >
+    <option value=""></option>
+    <option *ngFor="let user of finalUsersList" value="{{user.id}}"> {{user.name + ' ' + user.email}}</option>
+  </select>
+
+&nbsp;&nbsp;<button mat-raised-button  [disabled]="selectedUser === 0" (click)="AssignToGroup()">Assign</button>
+</div>
+<!-- <mat-form-field>
+    <mat-select name="UserVaraible" placeholder="Select User" [formControl]="selectedUserControl">
+      <mat-option *ngFor="let user of finalUsersList" [value]="user.id">
+        {{user.name + ' ' + user.email}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field> -->
+
+<div class="main-body">
+    <div class="table-container">
+      <table mat-table [dataSource]="dataSource" matSort>
+  
+        <!-- ID Column -->
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+          <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+        </ng-container>
+  
+        <!-- Progress Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let row"> {{row.name}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+          <td mat-cell *matCellDef="let row"> {{row.email}}</td>
+        </ng-container>
+  
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
+          <td mat-cell *matCellDef="let row">
+            <button mat-icon-button color="warn"  (click)="deleteGroupUser(row.id)"
+              matTooltip="Remove User from Group">
+              <mat-icon matTooltip="Delete Group">delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No data matching user.</td>
+        </tr>
+      </table>
+    </div>
+  </div>
